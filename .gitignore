@@ -4,5 +4,9 @@ node_modules/
 # Optional npm cache directory
 .npm
 
+# IDE
 .idea
-*.imi
+*.iml
+
+# etc
+package-lock.json

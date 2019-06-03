@@ -1,0 +1,33 @@
+{
+	"name": "2048",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"build": "webpack",
+		"dev-server": "webpack-dev-server --hot --inline"
+	},
+	"dependencies": {
+		"babel-preset-stage-0": "^6.24.1",
+		"cookie-parser": "~1.4.3",
+		"debug": "~2.6.9",
+		"express": "~4.16.0",
+		"http-errors": "~1.6.2",
+		"morgan": "~1.9.0",
+		"pug": "2.0.0-beta11",
+		"react": "^16.6.3",
+		"react-addons-update": "^15.6.2",
+		"react-dom": "^16.6.3",
+		"react-hot-loader": "^4.6.2",
+		"react-redux": "^6.0.1",
+		"redux": "^4.0.1",
+		"webpack": "^4.28.2",
+		"webpack-cli": "^3.1.2"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.5",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"webpack-dev-server": "^3.1.10"
+	}
+}

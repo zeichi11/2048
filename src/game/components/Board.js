@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Editor from './Block';
 import { connect, bindActionCreators } from 'react-redux';
+import Block from './Block';
+import Table from './Table';
 
 class Board extends Component {
 	constructor(props) {
@@ -39,6 +40,26 @@ class Board extends Component {
 	 * @returns {XML}
 	 */
 	render() {
+		let width,
+			height,
+			getInlineStyle = function () {
+				return {
+					width: width,
+					height: height
+				};
+			};
+
+		const GRID_LINE_WIDTH = 5;
+		const getWidth = function () {
+			// window 사이즈로 계산 필요
+			let width = 500;
+			return width;
+		};
+		const getHeight = function () {
+			// window 사이즈로 계싼 필요
+			let height = 500;
+			return height;
+		};
 		const renderBlocks = (board) => {
 			let blockState = board.block;
 			return blockState.map((block, i) => {
@@ -50,10 +71,9 @@ class Board extends Component {
 
 		return (
 			<div>
-				<div>
-					{renderBlocks(this.props.board)}
-				</div>
+				<Table board={this.props.board}/>
 			</div>
+
 		)
 	}
 }

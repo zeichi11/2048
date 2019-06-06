@@ -1,17 +1,18 @@
 import React from 'react';
-import Editor from './Board';
+import Board from './components/Board';
 import { connect, bindActionCreators } from 'react-redux';
 import * as actions from './actions';
 
 const mapStateToProps = (state) => {
 	return {
-		example: state.example
+		board: state.board
 	}
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		updateLineHeight: (id, height) => {dispatch(actions.updateLineHeight(id, height))}
+		updateRow: (index, rowArray) => {dispatch(actions.updateRow(index, rowArray))},
+		updateColumn: (index, colArray) => {dispatch(actions.updateColumn(id, colArray))}
 	}
 };
 

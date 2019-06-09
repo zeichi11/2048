@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		updateRow: (index, rowArray) => {dispatch(actions.updateRow(index, rowArray))},
-		updateColumn: (index, colArray) => {dispatch(actions.updateColumn(id, colArray))}
+		updateColumn: (index, colArray) => {dispatch(actions.updateColumn(id, colArray))},
+		addBlock: (row, column, value) => {dispatch(actions.addBlock(row, column, value))}
 	}
 };
 

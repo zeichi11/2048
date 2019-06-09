@@ -12,10 +12,15 @@ class TableRow extends Component {
 	 * @returns {XML}
 	 */
 	render() {
+		const inlineStyle = {
+			'border': '1px solid #000000'
+		};
 		const renderColumns = function (columns) {
 			return columns.map((column, i) => {
 				return (
-					<td key={i}></td>
+					<td key={i}
+						style={inlineStyle}>
+					</td>
 				);
 			});
 		};

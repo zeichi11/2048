@@ -13,13 +13,12 @@ class Table extends Component {
 	 * @returns {XML}
 	 */
 	render() {
-		const GRID_LINE_WIDTH = 5;
-		let width,
-			height,
-			getInlineStyle = function () {
+		const GRID_LINE_WIDTH = Constants.constants.GRID_LINE_WIDTH;
+		let getInlineStyle = function (width, height) {
 				return {
 					'width': width + 'px',
-					'height': height + 'px'
+					'height': height + 'px',
+					'border': '1px solid #000000'
 				};
 			};
 
@@ -31,6 +30,7 @@ class Table extends Component {
 			if (typeof board === 'undefined' || board === null) {
 				return;
 			}
+
 			return board.map((columns, i) => {
 				return (
 					<TableRow
@@ -42,13 +42,13 @@ class Table extends Component {
 		};
 
 		return (
-			<table>
+			<table style={getInlineStyle(this.props.width, this.props.height)}
+				   cellSpacing={GRID_LINE_WIDTH + 'px'}>
 				<tbody>
 					{createRowBlock(this.props.board)}
 				</tbody>
 			</table>
-
-		)
+		);
 	}
 }
 

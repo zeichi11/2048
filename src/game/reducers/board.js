@@ -35,14 +35,6 @@ export default function board(state = initialState, action) {
 	}
 
 	switch (action.type) {
-		case Constants.action.UPDATE_ROW:
-			return {
-				state
-			};
-		case Constants.action.UPDATE_COLUMN:
-			return {
-				state
-			};
 		case Constants.action.ADD_BLOCK:
 			return state.map((rowBlock, i) => {
 				if (i === action.row) {
@@ -51,6 +43,8 @@ export default function board(state = initialState, action) {
 
 				return rowBlock;
 			});
+		case Constants.action.UPDATE_BOARD:
+			return action.value;
 		default:
 			return state;
 	}

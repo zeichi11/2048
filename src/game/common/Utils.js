@@ -98,8 +98,38 @@ let Utils = {
 	 * @param arr
 	 * @returns {Blob|ArrayBuffer|Array.<T>|string|SharedArrayBuffer|Buffer|*}
 	 */
-	cloneArray: function (arr) {
-		return arr.slice(0);
+	cloneBoard: function (arr) {
+		return arr.map((columnBlocks, i) => {
+			return columnBlocks.slice(0);
+		});
+	},
+
+	/**
+	 * compare Tow Arrays
+	 * @param arr1
+	 * @param arr2
+	 * @returns {boolean}
+	 */
+	compareArrays: function (arr1, arr2) {
+		let i, j;
+
+		if (arr1.length !== arr2.length) {
+			return false;
+		}
+
+		for (i = 0; i < arr1.length; i++) {
+			if (arr1[i].length !== arr2[i].length) {
+				return false;
+			}
+
+			for (j = 0; j < arr1[i].length; j++) {
+				if (arr1[i][j] !== arr2[i][j]) {
+					return false;
+				}
+			}
+		}
+
+		return true;
 	}
 };
 

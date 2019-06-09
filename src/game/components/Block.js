@@ -19,8 +19,8 @@ class Block extends Component {
 
 			const getSize = () => (width - (GRID_LINE_WIDTH * (TR_COUNT + 1))) / TR_COUNT;
 			const getPosition = (i, j, size) => {
-				let left = i * size + (GRID_LINE_WIDTH * (i + 1)),
-					top = j * size + (GRID_LINE_WIDTH * (j + 1));
+				let left = j * size + (GRID_LINE_WIDTH * (j + 1)),
+					top = i * size + (GRID_LINE_WIDTH * (i + 1));
 				return [top, left];
 			};
 

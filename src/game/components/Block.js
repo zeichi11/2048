@@ -15,12 +15,14 @@ class Block extends Component {
 	render() {
 		const renderBlocks = (board, width, height) => {
 			const GRID_LINE_WIDTH = Constants.constants.GRID_LINE_WIDTH;
+			const GRID_LINE_BORDER_WIDTH = Constants.constants.GRID_LINE_BORDER_WIDTH;
 			const TR_COUNT = Constants.constants.TR_COUNT;
 
-			const getSize = () => (width - (GRID_LINE_WIDTH * (TR_COUNT + 1))) / TR_COUNT;
+			// const getSize = () => ((width - GRID_LINE_BORDER_WIDTH * 2) - ((GRID_LINE_WIDTH + GRID_LINE_BORDER_WIDTH + 1) * (TR_COUNT + 1))) / TR_COUNT;
+			const getSize = () => (width - (GRID_LINE_WIDTH + (GRID_LINE_BORDER_WIDTH * 2)) * (TR_COUNT + 1)) / TR_COUNT;
 			const getPosition = (i, j, size) => {
-				let left = j * size + (GRID_LINE_WIDTH * (j + 1)),
-					top = i * size + (GRID_LINE_WIDTH * (i + 1));
+				let left = j * size + ((GRID_LINE_WIDTH + (GRID_LINE_BORDER_WIDTH * 2)) * (j + 1)),
+					top = i * size + ((GRID_LINE_WIDTH + (GRID_LINE_BORDER_WIDTH * 2)) * (i + 1));
 				return [top, left];
 			};
 
@@ -41,8 +43,11 @@ class Block extends Component {
 								'top': position[0] + 'px',
 								'left': position[1] + 'px',
 								'backgroundColor': backgroundColor,
+								'color': '#ffffff',
 								'fontSize': fontSize + 'px',
-								'textAlign': 'center'
+								'fontWeight': 'bold',
+								'textAlign': 'center',
+								'borderRadius': '8px 8px 8px 8px'
 							};
 
 						return (

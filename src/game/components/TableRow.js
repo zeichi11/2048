@@ -13,7 +13,9 @@ class TableRow extends Component {
 	 */
 	render() {
 		const inlineStyle = {
-			'border': '1px solid #000000'
+			'outline': '10px solid #f7e19b',
+			'border': '2px solid #f7e19b',
+			'borderRadius': '10px 10px 10px 10px'
 		};
 		const renderColumns = function (columns) {
 			return columns.map((column, i) => {

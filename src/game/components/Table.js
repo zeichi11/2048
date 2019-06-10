@@ -18,7 +18,9 @@ class Table extends Component {
 				return {
 					'width': width + 'px',
 					'height': height + 'px',
-					'border': '1px solid #000000'
+					'border': '2px solid #f7e19b',
+					'borderRadius': '10px 10px 10px 10px',
+					'backgroundColor': '#ffefbc'
 				};
 			};
 

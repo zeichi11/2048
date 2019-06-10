@@ -190,10 +190,10 @@ class Board extends Component {
 	 */
 	render() {
 		const getWidth = () => {
-			return 500;
+			return 550;
 		};
 		const getHeight = () => {
-			return 500;
+			return 550;
 		};
 
 		let width = getWidth(),
